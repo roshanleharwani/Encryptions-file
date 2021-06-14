@@ -1,2 +1,2 @@
 # Python-Projects
-This Pyhton File allow you to check the Upload and Download Speed.
+This Pyhton Script allow you to check the Upload and Download Speed.
