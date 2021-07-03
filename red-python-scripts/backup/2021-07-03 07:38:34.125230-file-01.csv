@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+CE:B9:88:D7:BC:67, 2021-04-09 14:11:01, 2021-04-09 14:11:09,  1, 180, WPA2, CCMP, PSK, -27,       26,        0,   0.  0.  0.  0,  12, redmi note 7, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+10:BC:97:91:78:A9, 2021-04-09 14:11:04, 2021-04-09 14:11:04, -82,        7, (not associated) ,
+
