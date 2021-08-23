@@ -1,9 +1,0 @@
-
-BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
-A8:DA:0C:4F:8D:94, 2021-07-03 07:50:11, 2021-07-03 07:50:26,  1, 130, WPA2, CCMP, PSK, -71,       69,        6,   0.  0.  0.  0,  14, JioFiber-FHHtp, 
-AA:DA:0C:5F:8D:94, 2021-07-03 07:50:11, 2021-07-03 07:50:26,  1, 130, WPA2, CCMP, PSK, -20,       56,        0,   0.  0.  0.  0,   0, , 
-
-Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
-A2:36:A9:70:70:95, 2021-07-03 07:50:15, 2021-07-03 07:50:21, -46,        9, (not associated) ,
-20:34:FB:7E:D5:73, 2021-07-03 07:50:25, 2021-07-03 07:50:26, -39,       13, A8:DA:0C:4F:8D:94,
-
