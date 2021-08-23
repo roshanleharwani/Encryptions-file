@@ -1,2 +1,2 @@
 # Python-Projects
-This Pyhton Script allow you to check the Upload and Download Speed.
+This Python scripts help you to get your internet speed both Download and Upload in cli by satifying requirements present in requirements.txt file.
