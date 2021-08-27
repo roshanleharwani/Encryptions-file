@@ -32,6 +32,7 @@ while True:
                 if choose == "Y" or choose == "y":
                     key_file = open("key.key", "wb")
                     key_file.write(key)
+                    key_file.close()
                     print()
                     print(colorama.Fore.GREEN+ '[*] File Saved Successfully')
                     print()
@@ -77,18 +78,13 @@ while True:
             print(f"Encrypted String >> {encrypted_string}")
             print()
         elif choice == 3:
-            try :
-                encrypted_string = (input("Enter the Encrypted String: ")).encode()
-                key = (input("Enter the KEY: ")).encode()
-                decrypted_string = (Fernet(key).decrypt(encrypted_string)).decode()
-                print()
-                print(f"Decrypted String >> {decrypted_string}")
-                break
-            except:
-                print()
-                print("[*] Please check your key and hash")
-                print()
-                continue
+            
+            encrypted_string = (input("Enter the Encrypted String: ")).encode()
+            key = (input("Enter the KEY: ")).encode()
+            decrypted_string = (Fernet(key).decrypt(encrypted_string)).decode()
+            print()
+            print(f"Decrypted String >> {decrypted_string}")
+            break
         elif choice == 4:
             try :
                 file_path = input("Enter the path of the file with the file name: ")
