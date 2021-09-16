@@ -17,7 +17,7 @@ if option == 1:
                 index = l1.index(k)
                 new_str += l1[index + 13].swapcase()
             elif i == " ":
-                new_str += "$"
+                new_str += " "
         print()
         print(">>",new_str)
     elif type(str) != str:
@@ -35,7 +35,7 @@ elif option == 2:
             elif k in l1:
                 index = l1.index(k)
                 new_str += l1[index - 13].swapcase()
-            elif i == "$":
+            elif i == " ":
                 new_str += " "
         print()
         print(">>",new_str)
