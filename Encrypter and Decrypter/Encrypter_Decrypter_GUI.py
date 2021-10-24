@@ -77,6 +77,19 @@ class MyApp(QMainWindow):
                     time.sleep(0.001)
                     self.progressBar.setValue(i)
                 self.label_5.setText(decrypted_text)
+                msg = QMessageBox()
+                msg.setText('Do you want to Save this Encrypted Text ?')
+                msg.setWindowTitle('Save File')
+                msg.addButton(QPushButton('Yes'), QMessageBox.YesRole)
+                msg.addButton(QPushButton('No'), QMessageBox.NoRole)
+                if msg.exec_() == 0:
+                    try:
+                        file, _ = QFileDialog.getSaveFileName(self, 'Save File')
+                        file = open(file, 'w')
+                        file.write(decrypted_text)
+                        file.close()
+                    except:
+                        self.wrong()
             except:
                 self.valid()
 
