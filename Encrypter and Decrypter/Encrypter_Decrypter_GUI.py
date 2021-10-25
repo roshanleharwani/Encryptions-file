@@ -159,5 +159,52 @@ class MyApp(QMainWindow):
 
 
 app = QApplication([])
+style = '''
+    QMainWindow{
+        background :#005e7d;
+        color:#fff    
+    }
+    QLabel{
+        color:#fff;
+    }
+    QLabel#label{
+        color:#fff;
+        font-weight:bold;
+    }
+    QLabel#label_5{
+        border-radius:5px;
+        border:1px solid #fff
+    }
+    QRadioButton{
+        color:#fff;
+    }
+    QPushButton#pushButton{
+        border-radius:5px;
+        border :1px solid 0000;
+        color:0000;
+        background:#42bff5;
+        font-weight:bold;
+    }
+
+    QPushButton#pushButton:hover{
+        background :#f24b6d;
+    }
+    QPlainTextEdit{
+        border: 1px solid; 
+        border-radius:10px; 
+        background-color: palette(base);
+        padding:2px
+    }
+    QProgressBar{
+        border :1px solid 0000;
+        border-radius:5px;
+        text-align:center;
+        font-weight:bold;
+    }    
+    QProgressBar::chunk{
+        background-color:#0de7ff;
+    }
+'''
+app.setStyleSheet(style)
 window = MyApp()
 app.exec_()
