@@ -10,7 +10,7 @@ class MyApp(QMainWindow):
 
     def __init__(self):
         super(MyApp, self).__init__()
-        uic.loadUi('ed.ui', self)
+        uic.loadUi('design.ui', self)
         self.show()
         self.pushButton.clicked.connect(self.encrypt_decrypt)
         self.radioButton_2.clicked.connect(self.on_click_1)
