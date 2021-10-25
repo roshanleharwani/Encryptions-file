@@ -10,7 +10,7 @@ class MyApp(QMainWindow):
 
     def __init__(self):
         super(MyApp, self).__init__()
-        uic.loadUi('design.ui', self)
+        uic.loadUi('ed.ui', self)
         self.show()
         self.pushButton.clicked.connect(self.encrypt_decrypt)
         self.radioButton_2.clicked.connect(self.on_click_1)
@@ -138,7 +138,7 @@ class MyApp(QMainWindow):
         self.plainTextEdit_3.clear()
         self.plainTextEdit_3.insertPlainText(key)
         msg.exec()
-
+        
     def on_click_5(self):
         try:
             options = QFileDialog.Options()
