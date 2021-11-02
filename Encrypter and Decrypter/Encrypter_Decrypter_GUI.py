@@ -5,7 +5,6 @@ import pyperclip
 import os
 import time
 
-
 class MyApp(QMainWindow):
 
     def __init__(self):
@@ -18,11 +17,20 @@ class MyApp(QMainWindow):
         self.Genrate.triggered.connect(self.on_click_3)
         self.actionOpen_File.triggered.connect(self.on_click_5)
         self.actionSave_Encrypted_Decrypted_Text.triggered.connect(self.on_click_4)
-        self.setWindowTitle("Application")
+        self.pushButton_2.clicked.connect(self.on_click_6)
+        self.plainTextEdit_3.insertPlainText(" ")
+        self.plainTextEdit.insertPlainText(" ")
+        self.plainTextEdit_3.clear()
+        self.plainTextEdit.clear()
+        if self.label_5.text() == '':
+            self.pushButton_2.setEnabled(False)
+        else:
+            self.pushButton_2.setEnabled(True)
+        self.Counter = 0
+        self.setWindowTitle(" ")
         self.setMaximumWidth(521)
         self.setMaximumHeight(679)
         self.text = ''
-        self.Counter = 0
 
     def wrong(self):
         msg = QMessageBox()
@@ -46,8 +54,17 @@ class MyApp(QMainWindow):
                 encrypted_text = (Fernet(key).encrypt(text)).decode()
                 self.label_5.setEnabled(True)
                 for i in range(101):
-                    time.sleep(0.001)
+                    if len(text) > 150 and len(text) < 500:
+                        time.sleep(0.001)
+                    elif len(text) < 150:
+                        pass
+                    elif len(text) > 500 and len(text) < 1000:
+                        time.sleep(0.005)
+                    elif len(text) > 1000:
+                        time.sleep(0.01)
                     self.progressBar.setValue(i)
+                self.pushButton_2.setEnabled(True)
+                self.actionSave_Encrypted_Decrypted_Text.setEnabled(True)
                 self.label_5.setText(encrypted_text)
                 msg = QMessageBox()
                 msg.setText('Do you want to Save this Encrypted Text ?')
@@ -74,8 +91,17 @@ class MyApp(QMainWindow):
                 decrypted_text = (Fernet(key).decrypt(text)).decode()
                 self.label_5.setEnabled(True)
                 for i in range(101):
-                    time.sleep(0.001)
+                    if len(text) > 150 and len(text) < 500:
+                        time.sleep(0.001)
+                    elif len(text) < 150:
+                        pass
+                    elif len(text) > 500 and len(text) < 1000:
+                        time.sleep(0.005)
+                    elif len(text) > 1000:
+                        time.sleep(0.01)
                     self.progressBar.setValue(i)
+                self.pushButton_2.setEnabled(True)
+                self.actionSave_Encrypted_Decrypted_Text.setEnabled(True)
                 self.label_5.setText(decrypted_text)
                 msg = QMessageBox()
                 msg.setText('Do you want to Save this Encrypted Text ?')
@@ -114,6 +140,7 @@ class MyApp(QMainWindow):
         self.text = ''
         self.label_6.setEnabled(False)
         self.label_7.setText('')
+        self.actionSave_Encrypted_Decrypted_Text.setEnabled(True) 
         self.progressBar.setValue(0)
         self.Counter += 1
 
@@ -133,12 +160,12 @@ class MyApp(QMainWindow):
         msg = QMessageBox()
         msg.setText(f'Key >> {key}')
         msg.setWindowTitle('[*] Key Copied Suceessfully !!')
-        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg.setStandardButtons(QMessageBox.Ok)
         pyperclip.copy(key)
         self.plainTextEdit_3.clear()
         self.plainTextEdit_3.insertPlainText(key)
         msg.exec()
-
+        
     def on_click_5(self):
         try:
             options = QFileDialog.Options()
@@ -152,59 +179,21 @@ class MyApp(QMainWindow):
             self.plainTextEdit.insertPlainText(text)
             msg = QMessageBox()
             msg.setWindowTitle('Info')
-            msg.setText(f'File Loaded Successfully !!')
+            msg.setText('File Loaded Successfully !!')
             msg.exec()
         except:
             self.wrong()
 
+    def on_click_6(self):
+        pyperclip.copy(self.label_5.text())
+        msg = QMessageBox()
+        msg.setWindowTitle('Info')
+        msg.setText('Text Copied !!')
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec()
+
 
 app = QApplication([])
-style = '''
-    QMainWindow{
-        background :#005e7d;
-        color:#fff    
-    }
-    QLabel{
-        color:#fff;
-    }
-    QLabel#label{
-        color:#fff;
-        font-weight:bold;
-    }
-    QLabel#label_5{
-        border-radius:5px;
-        border:1px solid #fff
-    }
-    QRadioButton{
-        color:#fff;
-    }
-    QPushButton#pushButton{
-        border-radius:5px;
-        border :1px solid 0000;
-        color:0000;
-        background:#42bff5;
-        font-weight:bold;
-    }
 
-    QPushButton#pushButton:hover{
-        background :#f24b6d;
-    }
-    QPlainTextEdit{
-        border: 1px solid; 
-        border-radius:10px; 
-        background-color: palette(base);
-        padding:2px
-    }
-    QProgressBar{
-        border :1px solid 0000;
-        border-radius:5px;
-        text-align:center;
-        font-weight:bold;
-    }    
-    QProgressBar::chunk{
-        background-color:#0de7ff;
-    }
-'''
-app.setStyleSheet(style)
 window = MyApp()
 app.exec_()

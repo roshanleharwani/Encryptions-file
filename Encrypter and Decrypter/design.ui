@@ -12,22 +12,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
-    <height>730</height>
+    <width>517</width>
+    <height>732</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+        background :#005e7d;
+
+}
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>10</y>
-      <width>131</width>
+      <x>180</x>
+      <y>20</y>
+      <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+        color:#fff;
+		font-weight: Bold
+}
+
+</string>
     </property>
     <property name="text">
      <string>Encrypter and Decrypter</string>
@@ -48,6 +66,11 @@
       <height>17</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton{
+        color:#fff;
+}</string>
+    </property>
     <property name="text">
      <string>Encrypt</string>
     </property>
@@ -67,6 +90,11 @@
       <height>17</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton{
+        color:#fff;
+}</string>
+    </property>
     <property name="text">
      <string>Decrypt</string>
     </property>
@@ -83,7 +111,18 @@
     <property name="focusPolicy">
      <enum>Qt::ClickFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPlainTextEdit{
+        border: 1px solid; 
+        border-radius:10px; 
+        background-color: palette(base);
+        padding:2px
+}</string>
+    </property>
     <property name="plainText">
+     <string/>
+    </property>
+    <property name="placeholderText">
      <string>Enter Your Key Here...</string>
     </property>
    </widget>
@@ -95,6 +134,11 @@
       <width>47</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+        color:#fff;
+}</string>
     </property>
     <property name="text">
      <string>Key:</string>
@@ -112,14 +156,22 @@
     <property name="focusPolicy">
      <enum>Qt::ClickFocus</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPlainTextEdit{
+        border: 1px solid; 
+        border-radius:10px; 
+        background-color: palette(base);
+        padding:2px
+}</string>
+    </property>
     <property name="plainText">
-     <string>Enter Your Text  Here...</string>
+     <string/>
     </property>
     <property name="overwriteMode">
      <bool>true</bool>
     </property>
     <property name="placeholderText">
-     <string/>
+     <string>Enter Your Text Here...</string>
     </property>
    </widget>
    <widget class="QProgressBar" name="progressBar">
@@ -129,23 +181,52 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>440</y>
-      <width>411</width>
+      <y>430</y>
+      <width>381</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar{
+        border-radius:10px;
+        text-align:center;
+        font-weight:bold;
+        border-style:none;
+        color:0000;
+
+    }    
+    QProgressBar::chunk{
+        border-radius:10px;
+        background:#00e1ff
+    }</string>
     </property>
     <property name="value">
      <number>0</number>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>480</y>
+      <x>180</x>
+      <y>470</y>
       <width>151</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton{
+        border-radius:5px;
+        border :1px solid 0000;
+        color:0000;
+        background:#42bff5;
+        font-weight:bold;
+}
+QPushButton#pushButton:hover{
+        background :#f24b6d;
+}</string>
     </property>
     <property name="text">
      <string>Encrypt</string>
@@ -159,15 +240,22 @@
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
       <x>90</x>
       <y>510</y>
       <width>351</width>
-      <height>71</height>
+      <height>91</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#label_5{
+        border-radius:5px;
+        border:1px solid #fff;
+		color:#fff
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -200,6 +288,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+        color:#fff;
+}
+</string>
+    </property>
     <property name="text">
      <string>Encrypted</string>
     </property>
@@ -210,8 +304,13 @@
       <x>30</x>
       <y>540</y>
       <width>47</width>
-      <height>13</height>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+        color:#fff;
+}</string>
     </property>
     <property name="text">
      <string>Text:</string>
@@ -228,6 +327,12 @@
       <width>47</width>
       <height>13</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+        color:#fff;
+}
+</string>
     </property>
     <property name="text">
      <string>File: </string>
@@ -249,13 +354,58 @@
      <number>7</number>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>510</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton_2:hover{
+         background: #383;
+}
+QPushButton#pushButton_2{
+        background: transparent;
+        margin:5px;
+        border-radius:5px;
+        border:1px solid #fff;
+    }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>clip.png</normaloff>clip.png</iconset>
+    </property>
+   </widget>
+   <zorder>progressBar</zorder>
+   <zorder>label</zorder>
+   <zorder>radioButton</zorder>
+   <zorder>radioButton_2</zorder>
+   <zorder>plainTextEdit_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>plainTextEdit</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>521</width>
+     <width>517</width>
      <height>21</height>
     </rect>
    </property>
@@ -293,6 +443,9 @@
    </property>
   </action>
   <action name="actionSave_Encrypted_Decrypted_Text">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Save Encrypted/Decrypted Text</string>
    </property>
@@ -301,6 +454,12 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>radioButton_2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
