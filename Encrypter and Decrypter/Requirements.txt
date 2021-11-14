@@ -1,5 +1,0 @@
-Cryptography
-pyperclip
-pyqt5
-PyQt5Designer
-pyqt5-plugins
