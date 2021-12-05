@@ -1,5 +1,8 @@
 # Encrypter and Decrypter GUI Project
-This Python Project allow you to Encrypt or Decrypt Text with the method of Cryptography.
-NOTE: Make sure you will Install all Required Packages from Requirements.txt to run the program without any error !! 
+This Encrypter and Decrypter GUI Project allow you to hash your text with the power of Cryptography this Project is fully compilled to exe apart from some file,
+made in python with PyQt5
 
-Simply Run 'pip install -r Requirements.txt' on your Terminal or Command Prompt to install the required packages
+
+New Version of this GUI project is here now !!
+[*] Bugs Fixed
+Let me know the issues if your'e facing some
