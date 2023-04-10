@@ -1,37 +1,68 @@
+# Download the speedtest-cli module with command "pip install speedtest-cli"
+# Similarly colorama module with 'pip install colorama' 
+
 import speedtest
 import colorama
+import sys
+from time import sleep
+
+# type function for typing effect
+
+def type(words:str):
+    for char in words:
+        sleep(0.01)
+        sys.stdout.write(char)
+        sys.stdout.flush()
+    print()
+
 while True:
     colorama.init(autoreset=True)
+
+    #intializing speedtest module
+
     test = speedtest.Speedtest()
-    print("Getting Servers...")
+
+    type('Getting Servers...')
     test.get_servers()
-    print("Getting Best Servers...")
+
+    type('Getting Best Servers...')
     best = test.get_best_server()
-    host = best["sponsor"]
+
+    # Fetching host and address of the host
+
+    host =  best['sponsor']
     host = (colorama.Fore.GREEN + f'{host}')
-    country = best["country"]
-    country = (colorama.Fore.GREEN + f"{country}")
+    country  = best['country']
+    country = (colorama.Fore.GREEN + f'{country}')
     city = best['name']
-    city = (colorama.Fore.GREEN + f'{city}')
-    print("[*] Server Found")
-    print(f"ISP: {host}, {city} ,{country} ")
-    print("Calculating Download Speed...")
+    city = (colorama.Fore.GREEN + f"{city}")
+
+    type('[*] Server Found')
+    print(f'ISP: {host}, {city}, {country}')
+    print()
+
+    type('calculating Download Speed....')
+
+    # Download Speed !
     down_speed = test.download()
+
     print()
-    print(f"Download Speed: {down_speed / 1024 /1024: .2f} mb/ps OR {down_speed /1024 /1024 /8: .2f} MB/ps")
+    type(f'Download Speed: {down_speed / 1024 /1024: .2f} mb/ps OR {down_speed / 1024 /1024 /8: .2f} MB/ps')
     print()
-    print("Calculating Upload Speed...")
-    up_speed = test.upload()
+
+    type('calculating Upload Speed....')
+
+    #Upload Speed !
+    up_speed =  test.upload()
     print()
-    print(f"Upload Speed: {up_speed / 1024 /1024: .2f} mb/ps OR {up_speed /1024 /1024 /8: .2f} MB/ps")
+    type(f'Upload Speed: {up_speed /1024 /1024: .2f} mb/ps OR {up_speed /1024 /1024 /8: .2f} MB/ps')
     print()
-    choice = input("Do you want to Try again [Y/N]: ")
-    if choice == "y" or choice == "Y":
+
+    choice = input('Do you want to Try again [Y/N]: ')
+    if choice.lower() == 'y':
         continue
-    elif choice == "n" or choice == "N":
+    elif choice.lower() == 'n':
         break
     else:
-        print("[*] Invalid Input ")
+        type('[*] Invalid Input !')
         break
-        
-        
